@@ -20,6 +20,6 @@ public class WegVakServiceJpa implements WegVakService {
 
     @Override
     public WegVak createWegvak(WegVak wegvak) {
-        return null;
+        return wegVakRepository.save(wegvak);
     }
 }

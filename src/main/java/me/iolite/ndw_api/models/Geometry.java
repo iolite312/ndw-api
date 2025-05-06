@@ -1,6 +1,5 @@
 package me.iolite.ndw_api.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import java.util.List;
 
