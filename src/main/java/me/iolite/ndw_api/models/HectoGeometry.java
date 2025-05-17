@@ -1,11 +1,12 @@
 package me.iolite.ndw_api.models;
 
 import lombok.Data;
+
 import java.util.List;
 
 @Data
-public class Geometry {
+public class HectoGeometry {
     private String type;
-    private List<List<Double>> coordinates;
+    private List<Double> coordinates;
 }
 

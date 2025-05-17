@@ -3,28 +3,26 @@ package me.iolite.ndw_api.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import lombok.Data;
-import me.iolite.ndw_api.deserializers.WegVakDeserializer;
+import me.iolite.ndw_api.deserializers.HectopuntDeserializer;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
 @Data
-@Document(collection = "wegvakken")
+@Document(collection = "hectopunten")
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonDeserialize(using = WegVakDeserializer.class)
-public class WegVak {
+@JsonDeserialize(using = HectopuntDeserializer.class)
+public class Hectopunt {
     @Id
-    private Integer id;
+    private String id;
 
     private String type;
-    private WegGeometry wegGeometry;
+    private HectoGeometry wegGeometry;
     private String geometry_name;
-    private WegVakProperties wegVakProperties;
+    private HectopuntProperties hectopuntProperties;
 
-    @DBRef(lazy = true)
-    private List<Hectopunt> hectopunten;
+    @DBRef
+    private WegVak wegVak;
 
-    public WegVak() {}
+    public Hectopunt() {}
 }

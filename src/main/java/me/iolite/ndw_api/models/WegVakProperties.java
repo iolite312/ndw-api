@@ -1,22 +1,12 @@
 package me.iolite.ndw_api.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
-@Entity
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Properties {
-    @Id
-    @Column(name = "wvk_id")
-    private Long wvk_id;
-
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "wvk_id")
-    private WegVak wegVak;
-
+public class WegVakProperties {
+    private Integer wvk_id;
     private String wvk_begdat;
     private long jte_id_beg;
     private long jte_id_end;
